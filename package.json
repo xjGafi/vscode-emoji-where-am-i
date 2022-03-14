@@ -1,0 +1,60 @@
+{
+  "name": "emoji-where-am-i",
+  "displayName": "{Emoji} Where Am I?",
+  "description": "Identify your current working folder in status bar",
+  "version": "0.0.1",
+  "publisher": "vincent",
+  "icon": "assets/logo.png",
+  "licenses": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xjgafi/vscode-emoji-where-am-i"
+  },
+  "engines": {
+    "vscode": "^1.45.1"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./dist/extension",
+  "contributes": {
+    "commands": [
+      {
+        "command": "emoji-where-am-i.config",
+        "category": "Where Am I",
+        "title": "Config the emoji"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "Project Name In StatusBar extension configuration",
+      "properties": {
+        "emoji-where-am-i.emoji": {
+          "type": "string",
+          "default": "🚀",
+          "description": "Input emoji"
+        },
+        "emoji-where-am-i.projectSetting": {
+          "type": "object",
+          "default": {},
+          "description": "Project preference"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config-ts": "^0.2.11",
+    "@types/node": "^14.0.1",
+    "@types/vscode": "^1.45.1",
+    "eslint": "^7.0.0",
+    "typescript": "^3.9.2"
+  }
+}
